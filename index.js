@@ -8,7 +8,8 @@ function getComputerChoice(items) {
 
 
 /* display console player choice */
-const playerSelection =  prompt("rock paper or scissors?");
+const playerSelection =  prompt("rock paper or scissors?").toLowerCase();
+
 console.log("you have chosen: " + playerSelection);
 
 
