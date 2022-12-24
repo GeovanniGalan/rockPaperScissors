@@ -6,11 +6,18 @@ function getComputerChoice(items) {
     return  items[Math.floor(Math.random() * items.length)];
 }
 
-//console.log(getComputerChoice(items));
+
+/* display console player choice */
+const playerSelection =  prompt("rock paper or scissors?");
+console.log("you have chosen: " + playerSelection);
 
 
+/* display console CPU choice */
+const computerSelection = getComputerChoice(items)
+console.log("computer has chosen: " + computerSelection);
 
 
+// PlayRound function (1 game)
 function playRound (playerSelection, computerSelection) {
     if (playerSelection == "rock") {
 
@@ -63,5 +70,4 @@ function playRound (playerSelection, computerSelection) {
 
 }
 
-//const computerSelection = getComputerChoice();
-//const playerSelection =  prompt("rock paper or scissors?");
+console.log(playRound(playerSelection, computerSelection));
