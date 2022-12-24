@@ -23,47 +23,47 @@ function playRound (playerSelection, computerSelection) {
     if (playerSelection == "rock") {
 
         if (computerSelection == "paper") {
-            console.log("You lose Paper beats rock");
+            return ("You lose! Paper beats rock");
         }
         else if (computerSelection == "scissors") {
-            console.log("you win! rock smashes scissors!");
+            return ("you win! rock smashes scissors!");
         }
         else if (computerSelection == "rock") {
-            console.log("you tied! try again.");
+            return ("you tied! try again.");
         }
         else {
-            console.log(null);
+            return (null);
         }
     }
 
     else if (playerSelection == "paper") {
 
         if (computerSelection == "rock") {
-            console.log("you win! paper wraps rock!");
+            return ("you win! paper wraps rock!");
         }
         else if (computerSelection == "paper") {
-            console.log("you tied! try again.")
+           return ("you tied! try again.");
         }
         else if (computerSelection == "scissors") {
-            console.log("you lose scissors cut paper!");
+            return ("you lose! scissors cut paper!");
         }
         else {
-            console.log(null);
+            return (null);
         }
     }
     else if (playerSelection == "scissors") {
 
         if (computerSelection == "rock") {
-            console.log("you lose! rock smashes scissors.");
+            return ("you lose! rock smashes scissors.");
         }
         else if (computerSelection == "paper") {
-            console.log("you win! scissors slice paper!")
+            return ("you win! scissors slice paper!")
         }
         else if (computerSelection == "scissors") {
-            console.log("you tied, try again.");
+            return ("you tied, try again.");
         }
         else {
-            console.log(null);
+            return (null);
         }
     }
 
