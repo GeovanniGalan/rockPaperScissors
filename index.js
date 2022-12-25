@@ -1,22 +1,19 @@
+
 const items = ["rock", "paper", "scissors"];
 
+//random item from (items) array generator funtion
 function getComputerChoice(items) {
     return  items[Math.floor(Math.random() * items.length)];
 }
 
+//scores  
 playerScore = 0;
 computerScore = 0;
 
 
-   
-
-
-    
-
-
-
 // PlayRound function (1 game)
 function playRound (playerSelection, computerSelection) {
+
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
        (playerSelection == "scissors" && computerSelection == "paper") ||
        (playerSelection == "paper" && computerSelection == "rock")) 
@@ -26,7 +23,6 @@ function playRound (playerSelection, computerSelection) {
         return `you win! ${playerSelection} beats ${computerSelection}!! \n\n Player points: ${playerScore} \n\n computer points: ${computerScore}`;
         } 
     
-
     else if ((playerSelection == "scissors" && computerSelection == "rock") ||
         (playerSelection == "rock" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "scissors")) 
@@ -38,7 +34,7 @@ function playRound (playerSelection, computerSelection) {
     
 
     else if (playerSelection == computerSelection) {
-        return "its a tie! play again!";
+        return `its a tie! \n\n player points:  ${playerScore} \n\n Computer Score: ${computerScore}`;
     }
 
 
@@ -47,7 +43,7 @@ function playRound (playerSelection, computerSelection) {
     }
 }   
 
-
+//5 round game, with working for loop
 function game(result) {   
      
     for (let i = 0; i < 5; i++) {
@@ -61,9 +57,11 @@ function game(result) {
     else if (computerScore > playerScore) {
         console.log("computer wins! reload to play again!");
     }
+    else {
+        console.log("you tied with the computer. try again.");
+    }
    
 }
 
+//running 5 round game(rock paper scissors) in this function
 game();
-
-
