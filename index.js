@@ -7,15 +7,8 @@ function getComputerChoice(items) {
 }
 
 
-/* display console player choice */
-const playerSelection =  prompt("rock paper or scissors?").toLowerCase();
-
-console.log("you have chosen: " + playerSelection);
 
 
-/* display console CPU choice */
-const computerSelection = getComputerChoice(items)
-console.log("computer has chosen: " + computerSelection);
 
 
 // PlayRound function (1 game)
@@ -32,7 +25,7 @@ function playRound (playerSelection, computerSelection) {
             return ("you tied! try again.");
         }
         else {
-            return (null);
+            return (undefined);
         }
     }
 
@@ -48,7 +41,7 @@ function playRound (playerSelection, computerSelection) {
             return ("you lose! scissors cut paper!");
         }
         else {
-            return (null);
+            return (undefined);
         }
     }
     else if (playerSelection == "scissors") {
@@ -63,12 +56,27 @@ function playRound (playerSelection, computerSelection) {
             return ("you tied, try again.");
         }
         else {
-            return (null);
+            return (undefined);
         }
     }
-
-
-
 }
 
-console.log(playRound(playerSelection, computerSelection));
+
+/* looped game. game function in here looped */
+
+
+  for (let i = 0; i < 5; i++) {
+   /* display console player choice */
+    playerCard = 0;
+    computerCard = 0;
+    const playerSelection =  prompt("rock paper or scissors?").toLowerCase();
+    const computerSelection = getComputerChoice(items)
+    console.log(playRound(playerSelection, computerSelection));
+    
+    
+  }  
+    
+
+
+
+
