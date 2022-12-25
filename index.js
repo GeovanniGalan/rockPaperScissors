@@ -5,7 +5,9 @@ function getComputerChoice(items) {
 }
 playerScore = 0;
 computerScore = 0;
-
+function winner() {
+    (playerScore > computerScore) ? "you win!": "Computer wins!";
+}
 
    /* display console player choice */
    
@@ -24,6 +26,8 @@ function playRound (playerSelection, computerSelection) {
         playerScore += 1;
         return `you win! ${playerSelection} beats ${computerSelection}!! \n\n Player points: ${playerScore} \n\n computer points: ${computerScore}`;
         } 
+
+
     else if ((playerSelection == "scissors" && computerSelection == "rock") ||
         (playerSelection == "rock" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "scissors")) 
@@ -31,29 +35,32 @@ function playRound (playerSelection, computerSelection) {
         computerScore += 1;
         return `you lose! ${computerSelection} beats ${playerSelection}!! \n\n Computer points: ${computerScore} \n\n player score: ${playerScore}`;    
         }
+
+
     else if (playerSelection == computerSelection) {
         return "its a tie! play again!";
     }
+
+
     else {
         return undefined;
     }
 }
 
 function game() {
-
     for (let i = 0; i<5; i++) {
         const playerSelection =  prompt("rock paper or scissors?").toLowerCase();
         const computerSelection = getComputerChoice(items)
-        console.log(playRound(playerSelection, computerSelection));    
+        console.log(playRound(playerSelection, computerSelection)); 
+          
     }
-    return (playerScore > computerScore) ? "you won!": "You lost!";
+    winner();
 }
 
-console.log(game);
-/* looped game. game function in here looped */
 
 
-  
+game();
+winner();  
 
     
   
