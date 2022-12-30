@@ -47,19 +47,33 @@ function playRound (playerSelection, computerSelection) {
 function game(result) {   
      
     for (let i = 0; i < 5; i++) {
-        const playerSelection =  prompt("rock paper or scissors?").toLowerCase();
-        const computerSelection = getComputerChoice(items)
-        result = console.log(playRound(playerSelection, computerSelection));  
+        const playerSelection =  prompt("rock paper or scissors?")
+        if  (playerSelection === null) {
+            computerScore += 1;
+            console.log("dont be scared! reload the page and fight me! man vs machine!");
+            break;
+            
+        }
+        else {
+            playerSelection.toLowerCase()
+            const computerSelection = getComputerChoice(items)
+            result = console.log(playRound(playerSelection, computerSelection));  
+        }
     }
-    if (playerScore > computerScore) {
-        console.log("you win! reload to play again!");
-    }
-    else if (computerScore > playerScore) {
-        console.log("computer wins! reload to play again!");
-    }
-    else {
-        console.log("you tied with the computer. try again.");
-    }
+        
+    
+     
+        if (playerScore > computerScore) {
+            console.log("you win! reload to play again!");
+        }
+        else if (computerScore > playerScore) {
+            console.log("computer wins! reload to play again!");
+        }
+        else if (computerScore === playerScore) {
+            console.log("you tied with the computer. try again.");
+        }
+    
+    
    
 }
 
