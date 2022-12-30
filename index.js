@@ -43,7 +43,7 @@ function playRound (playerSelection, computerSelection) {
     }
 }   
 
-//5 round game, with working for loop
+//5 round game, with working for-loop. anounces winner after loop
 function game(result) {   
      
     for (let i = 0; i < 5; i++) {
