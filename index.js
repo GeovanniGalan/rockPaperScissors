@@ -35,22 +35,43 @@ function playRound (playerSelection, computerSelection) {
 }   
 //5 round game, with working for-loop. anounces winner after loop
 function game(result) {   
-    for (let i = 0; i < 5; i++) {
-        const playerSelection =  prompt("rock paper or scissors?").toLowerCase();
-        const computerSelection = getComputerChoice(items)
-        result = console.log(playRound(playerSelection, computerSelection));  
-    }
-    if (playerScore > computerScore) {
-        console.log("you win! reload to play again!");
-    }
-    else if (computerScore > playerScore) {
-        console.log("computer wins! reload to play again!");
-    }
-    else {
-        console.log("you tied with the computer. try again.");
-    }
-}
+
+
+        for (let i = 0; i < 5; i++) {
+            const playerSelection =  prompt("rock paper or scissors?");
+            if (playerSelection === null) {
+                console.log("too scared? load screen to test your luck.");
+                break;
+                
+            }
+            else {
+                playerSelection.toLowerCase(); 
+            }
+        }
+
+
+            const computerSelection = getComputerChoice(items)
+            result = playRound(playerSelection, computerSelection);
+            return result;  
+    
+        }
+        
+        if (playerScore > computerScore) {
+            console.log("you win! reload to play again!");
+        }
+        else if (computerScore > playerScore) {
+            console.log("computer wins! reload to play again!");
+        }
+
+        else if (computerScore === playerScore) {
+            console.log("you tied with the computer. try again.");
+        }
+
+        else {
+            console.log('game over')
+        }
+        
+
 //running 5 round game(rock paper scissors) in this function
 game();
 
-const btn btn1 = document.createElement('#btn')
