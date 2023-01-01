@@ -1,18 +1,40 @@
 
 const items = ["rock", "paper", "scissors"];
 
-//random item from (items) array generator funtion
+
 function getComputerChoice(items) {
     return  items[Math.floor(Math.random() * items.length)];
 }
 
-//scores  
+
 playerScore = 0;
 computerScore = 0;
 
+const rock = document.getElementById('smash');
+const scissors = document.getElementById('cut');
+const paper = document.getElementById('wrap');
+
+//3 event listeners for each button to display right choice when clicked
+paper.addEventListener('click', function() {
+    playRound('paper');
+});
+scissors.addEventListener('click', function() {
+    playRound('scissors');
+});
+rock.addEventListener('click' , function() {
+    playRound('rock');
+     
+});
+
 
 // PlayRound function (1 game)
-function playRound (playerSelection, computerSelection) {
+function playRound (yourChoice) {
+    txt = yourChoice
+    const computerSelection = getComputerChoice(items);
+    if  (txt === null) {
+        computerScore += 1;
+    }
+    
 
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
        (playerSelection == "scissors" && computerSelection == "paper") ||
@@ -20,7 +42,7 @@ function playRound (playerSelection, computerSelection) {
         { 
         playerScore += 1;
         
-        return `you win! ${playerSelection} beats ${computerSelection}!! \n\n Player points: ${playerScore} \n\n computer points: ${computerScore}`;
+        console.log(`you win! ${playerSelection} beats ${computerSelection}!! \n\n Player points: ${playerScore} \n\n computer points: ${computerScore}`);
         } 
     
     else if ((playerSelection == "scissors" && computerSelection == "rock") ||
@@ -28,13 +50,13 @@ function playRound (playerSelection, computerSelection) {
         (playerSelection == "paper" && computerSelection == "scissors")) 
         {
         computerScore += 1;
-        return `you lose! ${computerSelection} beats ${playerSelection}!! \n\n Computer points: ${computerScore} \n\n player score: ${playerScore}`;    
+        console.log(`you lose! ${computerSelection} beats ${playerSelection}!! \n\n Computer points: ${computerScore} \n\n player score: ${playerScore}`);    
         }
       
     
 
     else if (playerSelection == computerSelection) {
-        return `its a tie! \n\n player points:  ${playerScore} \n\n Computer Score: ${computerScore}`;
+        console.log(`its a tie! \n\n player points:  ${playerScore} \n\n Computer Score: ${computerScore}`);
     }
 
 
@@ -42,6 +64,18 @@ function playRound (playerSelection, computerSelection) {
         return undefined;
     }
 }   
+
+
+
+
+
+
+
+
+
+
+
+
 
 //5 round game, with working for loop
 function game(result) {   
@@ -67,17 +101,11 @@ function game(result) {
         }
         else if (computerScore === playerScore) {
             console.log("you tied with the computer. try again.");
-        }  
+        }
+        
 } 
 
 
 //running 5 round game(rock paper scissors) in this function
 //game();
 
-const rock = document.getElementById('smash');
-
-rock.addEventListener('click' , function() {
-    game('rock');
-     
-})
-{once: true};
