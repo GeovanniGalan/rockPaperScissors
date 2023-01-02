@@ -34,7 +34,7 @@ rock.addEventListener('click' , function() {
 
 
 // PlayRound function (1 game)
-function playRound (yourChoice) {
+function playRound () {
     txt = yourChoice
     const computerSelection = getComputerChoice(items);
 
@@ -86,34 +86,27 @@ function playRound (yourChoice) {
 
 
 //5 round game, with working for loop
-function game(choice) {   
+function game() {   
      
     for (let i = 0; i < 5; i++) {
-        const playerSelection = choice
-        if  (playerSelection === null) {
-            computerScore += 1;
-            break;
-        }
         
-        else {
-            
-            const computerSelection = getComputerChoice(items)
-            result = console.log(playRound(playerSelection, computerSelection));  
-        }
-    }
+        const computerSelection = getComputerChoice(items)
+         result = console.log(playRound(playerSelection, computerSelection));  
+        
+    
         if (playerScore > computerScore) {
             para.textContent = "you win! reload to play again!";
         }
         else if (computerScore > playerScore) {
-            para.textContent = "computer wins! reload to play again!");
+            para.textContent = "computer wins! reload to play again!";
         }
         else if (computerScore === playerScore) {
-            para.textContent = "you tied with the computer. try again.");
+            para.textContent = "you tied with the computer. try again.";
         }
         
 } 
 
-
+}
 //running 5 round game(rock paper scissors) in this function
-//game();
+game();
 
