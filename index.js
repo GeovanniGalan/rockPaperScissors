@@ -48,7 +48,7 @@ function playRound (yourChoice) {
             rock.disabled= true;
             scissors.disabled= true;
             paper.disabled=true;
-            para.textContent = `you beat the machine! you can do anything!`;
+            para.textContent = `you beat the machine! you can do anything!\n reload the page to try again.`;
             
             }
         
@@ -67,7 +67,7 @@ function playRound (yourChoice) {
             rock.disabled= true;
             scissors.disabled= true;
             paper.disabled=true;
-            para.textContent = `you lost to the machine.`       
+            para.textContent = `you lost to the machine. \n reload the page to try again.`       
             }
         else {     
         para.textContent =` Player score: ${playerScore} \n\n Computer score: ${computerScore}`; 
