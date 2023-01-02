@@ -35,55 +35,50 @@ computerScore = 0;
 
 // PlayRound function (1 game)
 function playRound (yourChoice) {
-
-    
-   
     txt = yourChoice
     const computerSelection = getComputerChoice(items);
     let playerSelection = txt;
 
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
-       (playerSelection == "scissors" && computerSelection == "paper") ||
-       (playerSelection == "paper" && computerSelection == "rock")) 
+        (playerSelection == "scissors" && computerSelection == "paper") ||
+        (playerSelection == "paper" && computerSelection == "rock")) 
         { 
         playerScore += 1;
         if (playerScore === 5) {
             rock.disabled= true;
             scissors.disabled= true;
             paper.disabled=true;
-        }
-            else if (computerScore === 5) {
-                rock.disabled= true;
-                scissors.disabled= true;
-                paper.disabled=true;
+            para.textContent = `you beat the machine! you can do anything!`;
+            
             }
-        para.textContent = `\n\n Player score: ${playerScore} \n\n Computer score: ${computerScore}`;
-        } 
+        
     
-        else if ((playerSelection == "scissors" && computerSelection == "rock") ||
-            (playerSelection == "rock" && computerSelection == "paper") ||
-            (playerSelection == "paper" && computerSelection == "scissors")) 
-            {
-            computerScore += 1;
-            if (playerScore === 5) {
-                rock.disabled= true;
-                scissors.disabled= true;
-                paper.disabled=true;
+        else {
+                para.textContent = `\n\n Player score: ${playerScore} \n\n Computer score: ${computerScore}`;
             }
-                else if (computerScore === 5) {
-                    rock.disabled= true;
-                    scissors.disabled= true;
-                    paper.disabled=true;
-                }
-            para.textContent =` Player score: ${playerScore} \n\n Computer score: ${computerScore}`; 
+        }
+        
+    else if ((playerSelection == "scissors" && computerSelection == "rock") ||
+        (playerSelection == "rock" && computerSelection == "paper") ||
+        (playerSelection == "paper" && computerSelection == "scissors")) 
+        {
+        computerScore += 1;
+        if (computerScore === 5) {
+            rock.disabled= true;
+            scissors.disabled= true;
+            paper.disabled=true;
+            para.textContent = `you lost to the machine.`       
             }
-        else if (playerSelection == computerSelection) {
+        else {     
+        para.textContent =` Player score: ${playerScore} \n\n Computer score: ${computerScore}`; 
+        }
+        }
+    else if (playerSelection == computerSelection) {
 
-            para.textContent = `\n\n Player score:  ${playerScore} \n\n Computer score: ${computerScore}`
+        para.textContent = `\n\n Player score:  ${playerScore} \n\n Computer score: ${computerScore}`
         }
 
-}  
-
+}
 
 
 
